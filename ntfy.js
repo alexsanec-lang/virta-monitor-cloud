@@ -4,7 +4,7 @@ export async function sendNtfy(message, topic) {
         method: "POST",
         headers: {
             "Priority": "default",
-            "Tags": "electric_plug"
+           // "Tags": "electric_plug"
         },
         body: message
     });

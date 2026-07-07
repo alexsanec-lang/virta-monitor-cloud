@@ -258,13 +258,12 @@ async function main() {
         console.log("Sending ntfy...");
         console.log("");
         
-        const title =
-            changes[0].available
-            ? `${changes[0].name} became available`
-            : `${changes[0].name} became occupied`;
+        // const title =
+        //     changes[0].available
+        //     ? `${changes[0].name} became available`
+        //     : `${changes[0].name} became occupied`;
         
         await sendNtfy(
-            title,
             message,
             CONFIG.ntfyTopic
         );
