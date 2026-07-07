@@ -75,42 +75,32 @@ function connectorName(evse) {
 }
 
 async function readStation() {
-
     const response = await fetch(CONFIG.apiUrl);
-
     if (!response.ok)
         throw new Error(`HTTP ${response.status}`);
-
     const station = await response.json();
-
     const connectors = [];
-
     for (const evse of station.evses) {
-
         const connector = evse.connectors.find(c =>
             c.type === "Mennekes" ||
             c.type === "CCS"
         );
-
         if (!connector)
             continue;
-
+        
+        console.log(
+            `EVSE ${evse.id}: available=${evse.available}, ` +
+            `operative=${evse.operativeStatus}, ` +
+            `connectivity=${evse.connectivityStatus}`
+        );
         connectors.push({
-
             id: String(evse.id),
-
             name: connectorName(evse),
-
             type: connector.type,
-
             available: evse.available,
-
             operativeStatus: evse.operativeStatus,
-
             connectivityStatus: evse.connectivityStatus
-
         });
-
     }
 
     connectors.sort((a, b) => {
@@ -121,16 +111,12 @@ async function readStation() {
             "CCS #1",
             "CCS #2"
         ];
-
         return (
             order.indexOf(a.name) -
             order.indexOf(b.name)
         );
-
     });
-
     return connectors;
-
 }
 
 function compareState(previousState, connectors) {
@@ -140,6 +126,9 @@ function compareState(previousState, connectors) {
     for (const connector of connectors) {
 
         const previous = previousState[connector.id];
+        console.log(
+            `${connector.name}: ${previous?.available} -> ${connector.available}`
+        );
         console.log(
             `${connector.name}: previous=${previous?.available}, current=${connector.available}, status=${connector.status}`
         );
