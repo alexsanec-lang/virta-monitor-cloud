@@ -30,7 +30,7 @@
     "id": "20608",
     "name": "CCS #2",
     "type": "CCS",
-    "available": false,
+    "available": true,
     "operativeStatus": "Faulted",
     "connectivityStatus": "Offline",
     "since": "2026-07-07T12:52:39.916Z"

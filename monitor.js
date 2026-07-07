@@ -248,10 +248,11 @@ async function main() {
     }
 
     printConsole(connectors);
+    const force = process.argv.includes("--force");
 
-    if (changes.length > 0) {
+    if (changes.length > 0 || force) {
 
-        const message = buildMessage(connectors, changes);
+        const message = buildMessage(connectors);
 
         console.log("");
         console.log("Sending ntfy...");
