@@ -232,7 +232,7 @@ function printConsole(connectors) {
 
 }
 async function main() {
-
+    const force = process.argv.includes("--force");
     const previousState = await loadState();
 
     const connectors = await readStation();
@@ -248,7 +248,6 @@ async function main() {
     }
 
     printConsole(connectors);
-    const force = process.argv.includes("--force");
 
     if (changes.length > 0 || force) {
 
