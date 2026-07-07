@@ -3,17 +3,17 @@
     "id": "9871",
     "name": "AC #1",
     "type": "Mennekes",
-    "available": false,
-    "operativeStatus": "Charging",
+    "available": true,
+    "operativeStatus": "Available",
     "connectivityStatus": "Online",
-    "since": "2026-07-07T14:17:11.952Z"
+    "since": "2026-07-07T15:39:21.431Z"
   },
   "9872": {
     "id": "9872",
     "name": "AC #2",
     "type": "Mennekes",
     "available": false,
-    "operativeStatus": "Charging",
+    "operativeStatus": "SuspendedEV",
     "connectivityStatus": "Online",
     "since": "2026-07-07T13:08:06.056Z"
   },
