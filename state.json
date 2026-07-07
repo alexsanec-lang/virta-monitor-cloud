@@ -1,1 +1,38 @@
-{}
+{
+  "9871": {
+    "id": "9871",
+    "name": "AC #1",
+    "type": "Mennekes",
+    "available": false,
+    "operativeStatus": "Charging",
+    "connectivityStatus": "Online",
+    "since": "2026-07-07T12:52:39.914Z"
+  },
+  "9872": {
+    "id": "9872",
+    "name": "AC #2",
+    "type": "Mennekes",
+    "available": false,
+    "operativeStatus": "Charging",
+    "connectivityStatus": "Online",
+    "since": "2026-07-07T13:08:06.056Z"
+  },
+  "20607": {
+    "id": "20607",
+    "name": "CCS #1",
+    "type": "CCS",
+    "available": false,
+    "operativeStatus": "Unavailable",
+    "connectivityStatus": "Online",
+    "since": "2026-07-07T12:52:39.916Z"
+  },
+  "20608": {
+    "id": "20608",
+    "name": "CCS #2",
+    "type": "CCS",
+    "available": false,
+    "operativeStatus": "Faulted",
+    "connectivityStatus": "Offline",
+    "since": "2026-07-07T12:52:39.916Z"
+  }
+}
