@@ -12,7 +12,7 @@
     "id": "9872",
     "name": "AC #2",
     "type": "Mennekes",
-    "available": true,
+    "available": false,
     "operativeStatus": "Available",
     "connectivityStatus": "Online",
     "since": "2026-07-07T20:02:30.677Z"
