@@ -1,25 +1,46 @@
+name: Virta Monitor
+
+permissions:
+  contents: write
+
 on:
   schedule:
     - cron: "*/5 * * * *"
 
   workflow_dispatch:
 
-↓
+jobs:
+  monitor:  
+    runs-on: ubuntu-latest
 
-npm install
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
 
-↓
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
 
-node monitor.js
+      - name: Install dependencies
+        run: npm install
 
-↓
+      - name: Run monitor
+        run: node monitor.js
 
-if state.json changed
+      - name: Commit updated state
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
 
-↓
+          git add state.json
 
-git commit
-
-↓
-
-git push
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Update state.json"
+            git push
+          fi
