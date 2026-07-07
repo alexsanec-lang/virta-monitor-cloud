@@ -1,5 +1,5 @@
 export async function sendNtfy(message, topic) {
-
+    console.log("Topic:", topic);
     const response = await fetch(`https://ntfy.sh/${topic}`, {
         method: "POST",
         headers: {

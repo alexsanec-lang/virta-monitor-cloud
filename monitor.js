@@ -134,55 +134,36 @@ async function readStation() {
 }
 
 function compareState(previousState, connectors) {
-
     const newState = {};
-
     const changes = [];
 
     for (const connector of connectors) {
 
         const previous = previousState[connector.id];
-
+        console.log(
+            `${connector.name}: previous=${previous?.available}, current=${connector.available}, status=${connector.status}`
+        );
         const current = {
-
             ...connector,
-
             since: new Date().toISOString()
-
         };
 
         if (previous) {
-
             if (previous.available === connector.available) {
-
                 current.since = previous.since;
-
             } else {
-
                 changes.push({
-
                     name: connector.name,
-
                     available: connector.available
-
                 });
-
             }
-
         }
-
         newState[connector.id] = current;
-
     }
-
     return {
-
         newState,
-
         changes
-
     };
-
 }
 function buildMessage(connectors) {
 
