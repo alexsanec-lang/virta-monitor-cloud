@@ -1,0 +1,21 @@
+every 5 minutes
+
+↓
+
+npm install
+
+↓
+
+node monitor.js
+
+↓
+
+if state.json changed
+
+↓
+
+git commit
+
+↓
+
+git push

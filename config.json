@@ -1,0 +1,13 @@
+{
+  "stationId": 20607,
+  "stationName": "Kotikeskus Jyväskylä",
+  "ntfyTopic": "virta-alexsanec-987654321",
+  "apiUrl": "https://legacy-map.poweredbyvirta.com/api/core/v4/stations/20607",
+
+  "connectors": {
+    "9871": "AC #1",
+    "9872": "AC #2",
+    "20607": "CCS #1",
+    "20608": "CCS #2"
+  }
+}
