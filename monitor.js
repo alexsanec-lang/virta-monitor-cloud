@@ -130,7 +130,7 @@ function compareState(previousState, connectors) {
             `${connector.name}: ${previous?.available} -> ${connector.available}`
         );
         console.log(
-            `${connector.name}: previous=${previous?.available}, current=${connector.available}, status=${connector.status}`
+            `${connector.name}: previous=${previous?.available}, current=${connector.available}, operative=${connector.operativeStatus}`
         );
         const current = {
             ...connector,
